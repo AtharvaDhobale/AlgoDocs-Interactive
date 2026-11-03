@@ -1,42 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  /* Dark theme is default */
-  --background: #020617;
-  --foreground: #f8fafc;
-  --muted: #64748b;
-  --muted-foreground: #475569;
-  --border: #1e293b;
-  --card: #0f172a;
-  --primary: #22d3ee;
-  --primary-foreground: #0f172a;
-  --accent: #8b5cf6;
-  --gradient-start: #22d3ee;
-  --gradient-mid: #6366f1;
-  --gradient-end: #ec4899;
-  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-elevated: 0 4px 6px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.5);
-  --radius: 12px;
-}
-
-:root.light {
-  /* Light theme overrides */
+  /* Clean, Professional EdTech Light Theme by Default (Brilliant / Stripe / Coursera aesthetic) */
   --background: #f8fafc;
   --foreground: #0f172a;
   --muted: #475569;
-  --muted-foreground: #94a3b8;
+  --muted-foreground: #64748b;
   --border: #e2e8f0;
   --card: #ffffff;
-  --primary: #4f46e5;
+  --primary: #4f46e5;       /* Indigo 600 */
   --primary-foreground: #ffffff;
-  --accent: #7c3aed;
-  --gradient-start: #3b82f6;
-  --gradient-mid: #4f46e5;
-  --gradient-end: #db2777;
-  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.04);
-  --shadow-elevated: 0 4px 6px rgba(0, 0, 0, 0.02), 0 12px 40px rgba(0, 0, 0, 0.06);
+  --accent: #0284c7;        /* Sky 600 */
+  --gradient-start: #4f46e5;
+  --gradient-mid: #2563eb;
+  --gradient-end: #0891b2;
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+  --shadow-elevated: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+}
+
+:root.dark {
+  /* Dark theme overrides */
+  --background: #020617;
+  --foreground: #f8fafc;
+  --muted: #64748b;
+  --muted-foreground: #94a3b8;
+  --border: #1e293b;
+  --card: #0f172a;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --accent: #38bdf8;
+  --gradient-start: #6366f1;
+  --gradient-mid: #3b82f6;
+  --gradient-end: #06b6d4;
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-elevated: 0 4px 6px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 @theme inline {
@@ -44,6 +44,7 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-card: var(--card);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
@@ -67,7 +68,7 @@ body {
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(79, 70, 229, 0.15);
   color: var(--foreground);
 }
 
@@ -76,68 +77,4 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.gradient-border {
-  position: relative;
-  background: white;
-  border-radius: var(--radius);
-}
-
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-}
-
-.shadow-soft {
-  box-shadow: var(--shadow-soft);
-}
-
-.shadow-card {
-  box-shadow: var(--shadow-card);
-}
-
-.shadow-elevated {
-  box-shadow: var(--shadow-elevated);
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float 6s ease-in-out 2s infinite;
-}
-
-.grid-pattern {
-  background-image:
-    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
-  background-size: 64px 64px;
 }

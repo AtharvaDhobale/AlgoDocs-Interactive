@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { BookOpen, ShieldAlert, Cpu, Sparkles, CheckCircle2, Table, Layers } from "lucide-react";
+import { BookOpen, ShieldAlert, Cpu, Sparkles, CheckCircle2, Table, Layers, ArrowRight } from "lucide-react";
 
 interface TopicDocsProps {
   activeTab: "stack" | "queue" | "list" | "tree" | "hash" | "graph";
@@ -26,28 +26,28 @@ export default function TopicDocsSpec({ activeTab }: TopicDocsProps) {
       title: "Stack Abstract Data Type (LIFO Specification)",
       ditaType: "Task & Reference Archetype",
       analogy: "A spring-loaded cafeteria plate dispenser. You can only place or take plates from the very top.",
-      plainExplanation: "Think of a Stack like an undo button or a pile of plates. Whatever you put in last is the first thing that comes out. You can't reach inside to grab the bottom without taking everything else off first.",
+      plainExplanation: "Think of a Stack like an undo button or a pile of dinner plates. Whatever you place on top last is the first item that comes off. You cannot reach inside to remove items from the bottom without lifting everything above it first.",
       engineerExplanation: "Stack enforces Last-In, First-Out (LIFO) semantics via two primary O(1) primitives: push(e) and pop(). Internally backed by a dynamic array or singly linked list. Crucial for recursion call-stacks and expression evaluation.",
       architectExplanation: "Array-backed stacks exhibit high spatial cache locality and near-zero pointer overhead. Amortized push is O(1); worst-case array re-allocation incurs O(N) memory copies. Sizing capacity prevents heap fragmentation.",
       timeComplexity: { access: "O(n)", search: "O(n)", insert: "O(1)", delete: "O(1)" },
       spaceComplexity: "O(n)",
       failureModes: [
-        "Stack Overflow: Unbounded recursion consuming all allocated stack memory.",
-        "Stack Underflow: Calling pop() on an empty stack without precondition checking."
+        "Stack Overflow: Unbounded recursion or capacity exhaustion consuming thread stack limits.",
+        "Stack Underflow: Invoking pop() on an empty collection without invariant checking."
       ],
       procedureSteps: [
-        "Check capacity: ensure stack is not at MAX_CAPACITY before push.",
-        "Increment top pointer / array index.",
-        "Assign value to buffer[top].",
-        "Verify invariant: top element always reflects latest pushed entity."
+        "Validate pre-condition: ensure stack has not reached MAX_CAPACITY before push.",
+        "Increment top pointer / array index counter.",
+        "Assign incoming element to buffer[top].",
+        "Verify post-condition: top element immediately reflects newly pushed entity."
       ]
     },
     queue: {
       title: "Queue & Buffer Protocol (FIFO Specification)",
       ditaType: "Task & Architecture Archetype",
       analogy: "A water slide line or movie theater queue. The first person to arrive is the first person to enter.",
-      plainExplanation: "A Queue operates on fairness: First-Come, First-Served. Items enter at the back and exit from the front. If you join the line first, you get served first.",
-      engineerExplanation: "Queue enforces First-In, First-Out (FIFO) semantics. Enqueue appends to the rear; Dequeue evicts from the front. Standard circular buffers eliminate shifting overhead in array backings.",
+      plainExplanation: "A Queue operates on fundamental fairness: First-Come, First-Served. Items enter at the back and exit from the front. If you join the line first, you get served first.",
+      engineerExplanation: "Queue enforces First-In, First-Out (FIFO) semantics. Enqueue appends to the rear; Dequeue evicts from the front. Circular ring-buffers eliminate shifting overhead in array backings.",
       architectExplanation: "Circular ring-buffers leverage modulo arithmetic over power-of-two capacity masks ((head + 1) & mask) to avoid division. Cache false-sharing between producer and consumer pointers requires cache-line padding.",
       timeComplexity: { access: "O(n)", search: "O(n)", insert: "O(1)", delete: "O(1)" },
       spaceComplexity: "O(n)",
@@ -77,9 +77,9 @@ export default function TopicDocsSpec({ activeTab }: TopicDocsProps) {
       ],
       procedureSteps: [
         "Allocate new heap node with target payload.",
-        "Point new_node.next to current head.",
-        "Update head pointer to new_node.",
-        "Verify null-termination at tail."
+        "Point new_node.next to current head pointer.",
+        "Update head pointer to reference new_node.",
+        "Verify null-termination at tail boundary."
       ]
     },
     tree: {
@@ -147,34 +147,34 @@ export default function TopicDocsSpec({ activeTab }: TopicDocsProps) {
   const doc = topicData[activeTab] || topicData.stack;
 
   return (
-    <div className="rounded-2xl border border-cyan-500/30 bg-slate-900/90 p-6 backdrop-blur shadow-xl space-y-6">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-6">
       {/* Header with Diátaxis Badge */}
-      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-5">
         <div>
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-2.5 py-0.5 text-xs font-semibold text-cyan-300">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50 px-2.5 py-0.5 text-xs font-semibold text-indigo-700">
             <BookOpen className="h-3 w-3" /> {doc.ditaType}
           </div>
-          <h2 className="mt-2 text-xl font-bold text-white tracking-tight">{doc.title}</h2>
-          <p className="text-xs text-slate-400 mt-0.5">Topic-based structured documentation adhering to technical writing craft standards.</p>
+          <h2 className="mt-2 text-xl font-bold text-slate-900 tracking-tight">{doc.title}</h2>
+          <p className="text-xs text-slate-500 mt-0.5">Topic-based structured documentation adhering to technical writing craft standards.</p>
         </div>
 
         {/* Reading Level Switcher */}
-        <div className="flex items-center gap-1 rounded-xl border border-white/10 bg-slate-950 p-1">
+        <div className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 p-1">
           <button
             onClick={() => setReadingLevel("plain")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${readingLevel === "plain" ? "bg-emerald-500 text-slate-950" : "text-slate-400 hover:text-white"}`}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${readingLevel === "plain" ? "bg-white text-emerald-700 shadow-sm border border-slate-200" : "text-slate-600 hover:text-slate-900"}`}
           >
             🟢 Plain English
           </button>
           <button
             onClick={() => setReadingLevel("engineer")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${readingLevel === "engineer" ? "bg-cyan-500 text-slate-950" : "text-slate-400 hover:text-white"}`}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${readingLevel === "engineer" ? "bg-white text-indigo-700 shadow-sm border border-slate-200" : "text-slate-600 hover:text-slate-900"}`}
           >
             🔵 Developer Guide
           </button>
           <button
             onClick={() => setReadingLevel("architect")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${readingLevel === "architect" ? "bg-purple-500 text-slate-950" : "text-slate-400 hover:text-white"}`}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${readingLevel === "architect" ? "bg-white text-purple-700 shadow-sm border border-slate-200" : "text-slate-600 hover:text-slate-900"}`}
           >
             🟣 Systems Architect
           </button>
@@ -182,14 +182,14 @@ export default function TopicDocsSpec({ activeTab }: TopicDocsProps) {
       </div>
 
       {/* Dynamic Reading Level Content */}
-      <div className="rounded-xl border border-white/10 bg-slate-950/60 p-4">
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-400 mb-2">
+      <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 mb-2">
           <Sparkles className="h-3.5 w-3.5" />
           {readingLevel === "plain" && "Plain-English Analogy & Conceptual Model"}
           {readingLevel === "engineer" && "Developer Reference & API Contract"}
           {readingLevel === "architect" && "Systems Architecture, Memory Alignment & Cache Locality"}
         </div>
-        <p className="text-sm text-slate-200 leading-relaxed">
+        <p className="text-sm text-slate-700 leading-relaxed">
           {readingLevel === "plain" && doc.plainExplanation}
           {readingLevel === "engineer" && doc.engineerExplanation}
           {readingLevel === "architect" && doc.architectExplanation}
@@ -199,33 +199,33 @@ export default function TopicDocsSpec({ activeTab }: TopicDocsProps) {
       {/* Grid: Complexity Matrix & Procedural Steps */}
       <div className="grid gap-6 md:grid-cols-2">
         {/* Complexity Table */}
-        <div className="rounded-xl border border-white/10 bg-slate-950/40 p-4">
-          <div className="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-3">
-            <Table className="h-3.5 w-3.5 text-cyan-400" /> Complexity Bounds
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
+          <div className="flex items-center gap-2 text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
+            <Table className="h-3.5 w-3.5 text-indigo-600" /> Complexity Bounds
           </div>
           <table className="w-full text-left text-xs">
             <thead>
-              <tr className="border-b border-white/10 text-slate-400">
-                <th className="py-1.5">Operation</th>
-                <th className="py-1.5">Time Bound</th>
+              <tr className="border-b border-slate-200 text-slate-500 font-semibold">
+                <th className="py-2">Operation</th>
+                <th className="py-2">Time Bound</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5 text-slate-200">
-              <tr><td className="py-1.5 text-slate-400">Index Access</td><td className="font-mono text-cyan-300">{doc.timeComplexity.access}</td></tr>
-              <tr><td className="py-1.5 text-slate-400">Search Lookup</td><td className="font-mono text-cyan-300">{doc.timeComplexity.search}</td></tr>
-              <tr><td className="py-1.5 text-slate-400">Insertion</td><td className="font-mono text-emerald-400">{doc.timeComplexity.insert}</td></tr>
-              <tr><td className="py-1.5 text-slate-400">Deletion</td><td className="font-mono text-emerald-400">{doc.timeComplexity.delete}</td></tr>
-              <tr><td className="py-1.5 text-slate-400">Space Overhead</td><td className="font-mono text-purple-300">{doc.spaceComplexity}</td></tr>
+            <tbody className="divide-y divide-slate-100 text-slate-700">
+              <tr><td className="py-2 text-slate-500">Index Access</td><td className="font-mono font-medium text-slate-900">{doc.timeComplexity.access}</td></tr>
+              <tr><td className="py-2 text-slate-500">Search Lookup</td><td className="font-mono font-medium text-slate-900">{doc.timeComplexity.search}</td></tr>
+              <tr><td className="py-2 text-slate-500">Insertion</td><td className="font-mono font-medium text-indigo-600">{doc.timeComplexity.insert}</td></tr>
+              <tr><td className="py-2 text-slate-500">Deletion</td><td className="font-mono font-medium text-indigo-600">{doc.timeComplexity.delete}</td></tr>
+              <tr><td className="py-2 text-slate-500">Space Overhead</td><td className="font-mono font-medium text-purple-600">{doc.spaceComplexity}</td></tr>
             </tbody>
           </table>
         </div>
 
         {/* Task-Based Procedure */}
-        <div className="rounded-xl border border-white/10 bg-slate-950/40 p-4">
-          <div className="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-3">
-            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" /> Procedural Implementation
+        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-xs">
+          <div className="flex items-center gap-2 text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
+            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" /> Procedural Implementation
           </div>
-          <ol className="space-y-2 text-xs text-slate-300 list-decimal list-inside">
+          <ol className="space-y-2.5 text-xs text-slate-700 list-decimal list-inside">
             {doc.procedureSteps.map((step, i) => (
               <li key={i} className="leading-relaxed">{step}</li>
             ))}
@@ -234,14 +234,14 @@ export default function TopicDocsSpec({ activeTab }: TopicDocsProps) {
       </div>
 
       {/* Failure Modes & Safeguards */}
-      <div className="rounded-xl border border-amber-500/20 bg-amber-950/20 p-4">
-        <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
-          <ShieldAlert className="h-3.5 w-3.5" /> Failure Modes & Edge Case Safeguards
+      <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-5">
+        <div className="flex items-center gap-2 text-xs font-bold text-amber-800 uppercase tracking-wider mb-2">
+          <ShieldAlert className="h-3.5 w-3.5 text-amber-600" /> Failure Modes & Edge Case Safeguards
         </div>
-        <ul className="space-y-1.5 text-xs text-slate-300">
+        <ul className="space-y-2 text-xs text-slate-700">
           {doc.failureModes.map((fm, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="text-amber-400 font-bold">•</span>
+              <span className="text-amber-600 font-bold">•</span>
               <span>{fm}</span>
             </li>
           ))}

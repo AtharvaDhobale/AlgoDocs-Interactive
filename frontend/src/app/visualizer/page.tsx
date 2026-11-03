@@ -85,7 +85,7 @@ function computeHash(key: string, size: number): { index: number; explanation: s
 }
 
 export default function VisualizerPage() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   const [activeTab, setActiveTab] = useState<"stack" | "queue" | "list" | "tree" | "hash" | "graph">("stack");
   const [viewMode, setViewMode] = useState<"technical" | "scenario">("technical");
 
@@ -136,16 +136,16 @@ export default function VisualizerPage() {
 
   // Theme
   useEffect(() => {
-    const t = localStorage.getItem("theme") as "dark" | "light" || "dark";
+    const t = (localStorage.getItem("theme") as "dark" | "light") || "light";
     setTheme(t);
-    document.documentElement.classList.toggle("light", t === "light");
+    document.documentElement.classList.toggle("dark", t === "dark");
   }, []);
 
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
     localStorage.setItem("theme", next);
-    document.documentElement.classList.toggle("light", next === "light");
+    document.documentElement.classList.toggle("dark", next === "dark");
   };
 
   // Default trees
