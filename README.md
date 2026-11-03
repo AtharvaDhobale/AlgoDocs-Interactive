@@ -3,12 +3,16 @@
 
 [![Next.js 15](https://img.shields.io/badge/Next.js-15.0-black.svg)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?logo=vercel)](https://algodocs-interactive.vercel.app)
 [![Documentation Framework](https://img.shields.io/badge/Docs--as--Code-Diátaxis%20Framework-purple.svg)](#diátaxis-documentation-standard)
 [![Monaco Editor](https://img.shields.io/badge/Code%20Playground-Monaco-orange.svg)](https://microsoft.github.io/monaco-editor/)
 [![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20v4-38bdf8.svg)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **AlgoDocs-Interactive** is an interactive technical documentation platform built to demonstrate **technical writing craft**, **concept simplification**, and **developer-centric communication**.
+
+> 🌐 **Live Production Deployment**: [https://algodocs-interactive.vercel.app](https://algodocs-interactive.vercel.app)  
+> 📦 **GitHub Repository**: [https://github.com/AtharvaDhobale/AlgoDocs-Interactive](https://github.com/AtharvaDhobale/AlgoDocs-Interactive)
 
 Built to answer the core mandate:  
 > *"A strong writer who understands technology and is excited about Gen AI, rather than a strong coder who happens to be able to write."*
