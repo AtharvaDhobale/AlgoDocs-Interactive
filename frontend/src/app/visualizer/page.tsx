@@ -8,6 +8,8 @@ import {
   Sun, Moon, Zap, BookOpen, FlaskConical, Info
 } from "lucide-react";
 import TopicDocsSpec from "@/components/TopicDocsSpec";
+import GenAIDocsTutor from "@/components/GenAIDocsTutor";
+import AIAnalogyGenerator from "@/components/AIAnalogyGenerator";
 
 // ==================== AVL & BST IMPLEMENTATIONS ====================
 interface AVLNode {
@@ -960,8 +962,10 @@ export default function VisualizerPage() {
           </div>
 
           {/* Diataxis Topic-Based Technical Documentation Spec */}
-          <div className="mt-4">
+          <div className="mt-4 space-y-6">
             <TopicDocsSpec activeTab={activeTab} />
+            <AIAnalogyGenerator />
+            <GenAIDocsTutor currentContext={activeTab} />
           </div>
 
         </section>
