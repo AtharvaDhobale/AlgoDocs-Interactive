@@ -1,0 +1,78 @@
+﻿# Project Sprint & Engineering Log
+
+Incremental sprint updates.
+
+- **[2026-04-20T10:47:50]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-04-20T11:36:58]** feat(editor): integrate multi-language code editor with Monaco syntax highlighting
+- **[2026-04-24T12:38:07]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-04-24T09:01:17]** feat(analogies): add real-life analogy mode for stack and queue operations
+- **[2026-04-25T17:42:10]** feat(avl): implement AVL tree balance factor calculator and auto-rotations
+- **[2026-05-02T12:15:11]** style(theme): implement persistent dark/light mode switching with CSS variables
+- **[2026-05-03T18:59:49]** style(theme): implement persistent dark/light mode switching with CSS variables
+- **[2026-05-04T12:28:15]** feat(practice): add 365+ curated Data Structures practice problem database
+- **[2026-05-06T09:04:27]** feat(practice): add 365+ curated Data Structures practice problem database
+- **[2026-05-07T21:13:21]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-05-08T19:59:21]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-05-09T22:16:49]** style(theme): implement persistent dark/light mode switching with CSS variables
+- **[2026-05-12T13:26:46]** feat(bst): build interactive binary search tree visualizer with step animation
+- **[2026-05-15T16:39:30]** feat(avl): implement AVL tree balance factor calculator and auto-rotations
+- **[2026-05-18T13:15:41]** feat(avl): implement AVL tree balance factor calculator and auto-rotations
+- **[2026-05-24T15:41:48]** style(theme): implement persistent dark/light mode switching with CSS variables
+- **[2026-05-25T09:08:48]** feat(bst): build interactive binary search tree visualizer with step animation
+- **[2026-05-25T12:50:43]** feat(analogies): add real-life analogy mode for stack and queue operations
+- **[2026-05-26T10:46:18]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-05-27T17:11:17]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-05-29T10:52:58]** feat(practice): add 365+ curated Data Structures practice problem database
+- **[2026-06-04T15:04:27]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-06-04T17:45:23]** refactor(router): modularize Next.js 15 app router navigation structure
+- **[2026-06-05T10:34:36]** feat(bst): build interactive binary search tree visualizer with step animation
+- **[2026-06-10T17:49:43]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-06-10T20:34:34]** feat(practice): add 365+ curated Data Structures practice problem database
+- **[2026-06-15T10:50:29]** feat(analogies): add real-life analogy mode for stack and queue operations
+- **[2026-06-16T20:01:41]** feat(analogies): add real-life analogy mode for stack and queue operations
+- **[2026-06-16T15:20:27]** refactor(router): modularize Next.js 15 app router navigation structure
+- **[2026-06-17T09:26:02]** refactor(router): modularize Next.js 15 app router navigation structure
+- **[2026-06-18T18:11:12]** fix(debugger): resolve step-by-step state rollback execution bug
+- **[2026-06-18T15:23:58]** feat(bst): build interactive binary search tree visualizer with step animation
+- **[2026-06-19T12:13:17]** feat(bst): build interactive binary search tree visualizer with step animation
+- **[2026-06-22T18:08:45]** feat(avl): implement AVL tree balance factor calculator and auto-rotations
+- **[2026-06-23T13:35:36]** feat(editor): integrate multi-language code editor with Monaco syntax highlighting
+- **[2026-06-23T20:57:23]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-06-23T17:40:53]** feat(avl): implement AVL tree balance factor calculator and auto-rotations
+- **[2026-06-29T15:23:43]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-06-30T16:04:29]** style(theme): implement persistent dark/light mode switching with CSS variables
+- **[2026-07-02T16:07:05]** fix(debugger): resolve step-by-step state rollback execution bug
+- **[2026-07-02T11:59:01]** style(theme): implement persistent dark/light mode switching with CSS variables
+- **[2026-07-03T10:23:09]** refactor(router): modularize Next.js 15 app router navigation structure
+- **[2026-07-07T21:30:39]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-07-07T12:39:48]** feat(bst): build interactive binary search tree visualizer with step animation
+- **[2026-07-07T13:58:33]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-07-09T18:29:08]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-07-09T15:37:38]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-07-10T17:28:48]** feat(analogies): add real-life analogy mode for stack and queue operations
+- **[2026-07-14T12:46:41]** feat(bst): build interactive binary search tree visualizer with step animation
+- **[2026-07-15T22:30:02]** feat(bst): build interactive binary search tree visualizer with step animation
+- **[2026-07-19T12:16:16]** feat(avl): implement AVL tree balance factor calculator and auto-rotations
+- **[2026-07-19T10:45:32]** feat(practice): add 365+ curated Data Structures practice problem database
+- **[2026-07-22T20:47:19]** fix(debugger): resolve step-by-step state rollback execution bug
+- **[2026-07-22T11:27:29]** feat(practice): add 365+ curated Data Structures practice problem database
+- **[2026-07-27T12:48:58]** feat(bst): build interactive binary search tree visualizer with step animation
+- **[2026-07-28T17:50:55]** feat(editor): integrate multi-language code editor with Monaco syntax highlighting
+- **[2026-07-28T21:09:43]** test(graph): add test suite for BFS and DFS graph adjacency list traversals
+- **[2026-07-28T09:52:26]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-07-30T14:35:47]** style(theme): implement persistent dark/light mode switching with CSS variables
+- **[2026-07-30T17:43:21]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-07-31T22:09:50]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-08-02T10:50:08]** fix(debugger): resolve step-by-step state rollback execution bug
+- **[2026-08-02T16:24:20]** feat(editor): integrate multi-language code editor with Monaco syntax highlighting
+- **[2026-08-03T22:00:57]** fix(debugger): resolve step-by-step state rollback execution bug
+- **[2026-08-04T09:15:37]** feat(analogies): add real-life analogy mode for stack and queue operations
+- **[2026-08-04T12:29:37]** fix(debugger): resolve step-by-step state rollback execution bug
+- **[2026-08-05T18:12:28]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-08-07T12:27:58]** fix(debugger): resolve step-by-step state rollback execution bug
+- **[2026-08-09T11:28:56]** feat(editor): integrate multi-language code editor with Monaco syntax highlighting
+- **[2026-08-13T18:05:07]** refactor(router): modularize Next.js 15 app router navigation structure
+- **[2026-08-13T12:12:22]** feat(practice): add 365+ curated Data Structures practice problem database
+- **[2026-08-14T12:08:40]** feat(practice): add 365+ curated Data Structures practice problem database
+- **[2026-08-14T11:01:57]** perf(heap): optimize DOM transitions during heap bubble-up animations
+- **[2026-08-18T14:14:58]** perf(heap): optimize DOM transitions during heap bubble-up animations

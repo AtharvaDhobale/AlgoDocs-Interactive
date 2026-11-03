@@ -1,0 +1,84 @@
+# ========================
+# Dependencies
+# ========================
+node_modules/
+frontend/node_modules/
+backend/target/
+.pnp
+.pnp.js
+
+# ========================
+# Environment & Secrets
+# ========================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+.env.*
+
+# ========================
+# Build Outputs
+# ========================
+frontend/.next/
+frontend/out/
+frontend/dist/
+backend/target/
+*.class
+*.jar
+*.war
+
+# ========================
+# IDE & Editor
+# ========================
+.idea/
+.vscode/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.settings/
+.classpath
+
+# ========================
+# OS Generated
+# ========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========================
+# Logs
+# ========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================
+# Testing
+# ========================
+/coverage
+*.lcov
+
+# ========================
+# Docker
+# ========================
+docker-data/
+
+# ========================
+# Misc
+# ========================
+*.tmp
+*.temp
+.cache/
